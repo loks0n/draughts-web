@@ -35,6 +35,7 @@ module.exports = {
     'chakra-ui/require-specific-component': 'error',
     'import/no-default-export': 'error',
     'import/order': 'error',
+    'no-console': 'warn',
     'no-unused-vars': [
       'error',
       {
