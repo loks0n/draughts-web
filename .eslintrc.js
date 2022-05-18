@@ -5,6 +5,7 @@ module.exports = {
     'plugin:unicorn/recommended',
     'plugin:sonarjs/recommended',
     'next/core-web-vitals',
+    'plugin:react/jsx-runtime',
   ],
   overrides: [
     {
