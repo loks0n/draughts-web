@@ -22,7 +22,7 @@ export function Navigation() {
   const btnRef = useRef();
   return (
     <>
-      <HStack as="nav" display={['none', 'block']} spacing={[2, 2, 4]}>
+      <HStack as="nav" display={['none', 'none', 'block']} spacing={[2, 2, 4]}>
         {pages.map((page) => (
           <NextLink key={`navlink-desktop-${page}`} href={`/${page}`} passHref>
             <Link fontSize="lg" fontWeight="bold">
@@ -33,7 +33,7 @@ export function Navigation() {
       </HStack>
       <IconButton
         ref={btnRef}
-        display={['block', 'none']}
+        display={['block', 'block', 'none']}
         aria-label="Open Menu"
         icon={<HamburgerIcon />}
         onClick={onOpen}

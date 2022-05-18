@@ -29,7 +29,9 @@ export function DraughtsBoard() {
       <Grid
         templateRows="repeat(8, 1fr)"
         templateColumns="repeat(8, 1fr)"
+        w="100%"
         h="100%"
+        style={{ aspectRatio: 1 }}
       >
         {rows.map(({ row, rowIndex }) =>
           row.map((piece, colIndex) => (
