@@ -2,15 +2,29 @@ import { useMemo } from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import { Grid, GridItem } from '@chakra-ui/react';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import { Players } from '../constants';
 import { useDraughtsBoard } from '../DraughtsBoardContext';
 import { useDraughtsSettings } from '../../settings/DraughtsSettingsContext';
 import { DraughtsCell } from './DraughtsCell';
 import { DraughtsGameOverModal } from './DraughtsGameOverModal';
 
+function isTouchDevice() {
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+
 export function DraughtsBoard() {
   const { board } = useDraughtsBoard();
   const { userPlayer } = useDraughtsSettings();
+
+  const backend = useMemo(() => {
+    if (typeof window === 'undefined') return HTML5Backend;
+    return isTouchDevice() ? TouchBackend : HTML5Backend;
+  }, []);
 
   const rows = useMemo(() => {
     const entries = board.position.map((row, rowIndex) => ({
@@ -24,7 +38,7 @@ export function DraughtsBoard() {
   }, [userPlayer, board.position]);
 
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={backend}>
       <DraughtsGameOverModal />
       <Grid
         templateRows="repeat(8, 1fr)"
