@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import { useRef } from 'react';
 import {
   HStack,
@@ -24,11 +23,14 @@ export function Navigation() {
     <>
       <HStack as="nav" display={['none', 'none', 'block']} spacing={[2, 2, 4]}>
         {pages.map((page) => (
-          <NextLink key={`navlink-desktop-${page}`} href={`/${page}`} passHref>
-            <Link fontSize="lg" fontWeight="bold">
-              {page}
-            </Link>
-          </NextLink>
+          <Link
+            key={`navlink-desktop-${page}`}
+            fontSize="lg"
+            fontWeight="bold"
+            href={`/${page}`}
+          >
+            {page}
+          </Link>
         ))}
       </HStack>
       <IconButton
@@ -53,15 +55,14 @@ export function Navigation() {
           <DrawerBody>
             <VStack as="nav">
               {pages.map((page) => (
-                <NextLink
+                <Link
                   key={`navlink-mobile-${page}`}
+                  fontSize="lg"
+                  fontWeight="bold"
                   href={`/${page}`}
-                  passHref
                 >
-                  <Link fontSize="lg" fontWeight="bold">
-                    {page}
-                  </Link>
-                </NextLink>
+                  {page}
+                </Link>
               ))}
             </VStack>
           </DrawerBody>
