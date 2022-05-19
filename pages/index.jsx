@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { HStack, VStack } from '@chakra-ui/react';
+import { Divider, Heading, HStack, VStack } from '@chakra-ui/react';
 import { DraughtsMenuView } from '../components/draughts/settings/views/DraughtsMenu';
 import { DraughtsProvider } from '../components/draughts/DraughtsContext';
 import {
@@ -10,6 +10,7 @@ import { DraughtsBoard } from '../components/draughts/board/views/DraughtsBoard'
 import { DraughtsGameInfoView } from '../components/draughts/DraughtsGameInfo';
 import { ComputerDifficulty } from '../components/draughts/settings/constants/computer-difficulty';
 import { MainLayout } from '../components/layout/MainLayout';
+import { DraughtsRulesContent } from '../components/content/DraughtsRulesContent';
 
 export default function Home() {
   return (
@@ -24,12 +25,15 @@ export default function Home() {
         }}
         board={{ playerToMove: Players.WHITE, position: INITIAL_POSITION }}
       >
-        <VStack>
+        <VStack spacing={6}>
           <DraughtsBoard />
           <HStack>
             <DraughtsMenuView />
             <DraughtsGameInfoView />
           </HStack>
+          <Divider />
+          <Heading size="sm">Rules of Draughts</Heading>
+          <DraughtsRulesContent />
         </VStack>
       </DraughtsProvider>
     </MainLayout>
