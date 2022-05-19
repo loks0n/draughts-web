@@ -1,8 +1,8 @@
-import { Container, Text, VStack } from '@chakra-ui/react';
+import { Text, VStack } from '@chakra-ui/react';
 
 export function DraughtsRulesContent() {
   return (
-    <VStack align="start" padding={[3, 0]} spacing={6}>
+    <VStack align="start" spacing={2}>
       <Text>
         The game of draughts is played on a 64 square checkerboard with eight
         rows of alternating dark and light colored squares.
@@ -56,17 +56,6 @@ export function DraughtsRulesContent() {
         If both the players can&apos;t move anywhere, the game will end in a
         tie, or draw.
       </Text>
-      <Container maxW="md">
-        <iframe
-          width="370"
-          height="315"
-          src="https://www.youtube.com/embed/PgNN6CdkYXs"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </Container>
     </VStack>
   );
 }

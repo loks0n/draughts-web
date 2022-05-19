@@ -25,7 +25,7 @@ export default function Home() {
         }}
         board={{ playerToMove: Players.WHITE, position: INITIAL_POSITION }}
       >
-        <VStack spacing={6}>
+        <VStack spacing={4}>
           <DraughtsBoard />
           <HStack>
             <DraughtsMenuView />

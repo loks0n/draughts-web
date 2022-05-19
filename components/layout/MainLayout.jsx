@@ -14,7 +14,7 @@ export function MainLayout(props) {
       columnGap={[3, 4, 5, 6]}
       templateRows={['0 auto auto auto auto 0', '0 auto auto 0']}
       templateColumns={[
-        '0 1fr 0',
+        '0 minmax(0, 1fr) 0',
         '0 minmax(4em, 1fr) min(78vh, 78vw) 0',
         '0 minmax(4em, 1fr) min(78vh, 78vw) minmax(4em, 1fr) 0',
       ]}
