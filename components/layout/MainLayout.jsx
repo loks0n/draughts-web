@@ -22,7 +22,7 @@ export function MainLayout(props) {
       <GridItem colSpan={1} colStart={[2, 3, 3]} rowStart={2}>
         <Header />
       </GridItem>
-      <GridItem colSpan={[3, 1]} colStart={[0, 3]} rowStart={[4, 3]}>
+      <GridItem colSpan={1} colStart={[2, 3]} rowStart={[4, 3]}>
         {props.children}
       </GridItem>
       <GridItem
