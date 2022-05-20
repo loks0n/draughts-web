@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { Container, Text, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
-import { MainLayout } from '../../components/layout/MainLayout';
-import aquerqueImage from './aquerque.jpeg';
-import draughts1700sImage from './draughts-1700s.webp';
+import { MainLayout } from '../components/layout/MainLayout';
+import aquerqueImage from '../public/history/aquerque.jpeg';
+import draughts1700sImage from '../public/history/draughts-1700s.webp';
 
 export default function History() {
   return (

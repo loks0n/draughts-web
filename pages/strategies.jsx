@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Text, VStack } from '@chakra-ui/react';
+import { AspectRatio, Text, VStack } from '@chakra-ui/react';
 import { MainLayout } from '../components/layout/MainLayout';
 
 export default function History() {
@@ -71,15 +71,15 @@ export default function History() {
           with the game&apos;s rules, he loses the game.
         </Text>
         <Text>Here&apos;s a great video on draughts strategies:</Text>
-        <iframe
-          width="370"
-          height="315"
-          src="https://www.youtube.com/embed/Lfo3yfrbUs0"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <AspectRatio ratio={16 / 9}>
+          <iframe
+            src="https://www.youtube.com/embed/Lfo3yfrbUs0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </AspectRatio>
       </VStack>
     </MainLayout>
   );
