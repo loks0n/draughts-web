@@ -11,7 +11,7 @@ export default function History() {
       <Head>
         <title>draughts.org - play draughts and checkers online free</title>
       </Head>
-      <VStack padding={[3, 0]} spacing={6}>
+      <VStack p={[3, 0]} spacing={6}>
         <Text>
           An archeological dig in Iraq unearthed the earliest known form of the
           game of Draughts. Carbon dating was used to determine the age of the

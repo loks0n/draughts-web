@@ -8,7 +8,7 @@ export default function History() {
       <Head>
         <title>draughts.org - strategies &amp; openings</title>
       </Head>
-      <VStack padding={[3, 0]} spacing={6}>
+      <VStack p={[3, 0]} spacing={6}>
         <Text>
           Draughts, also known as checkers, is a strategy board game which has
           been around for thousands of years. There are many variants, but the

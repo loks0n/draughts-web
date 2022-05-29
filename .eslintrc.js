@@ -31,7 +31,7 @@ module.exports = {
   plugins: ['prettier', 'react', 'chakra-ui', 'sort-keys-fix'],
   rules: {
     'chakra-ui/props-order': 'error',
-    'chakra-ui/props-shorthand': 'off',
+    'chakra-ui/props-shorthand': 'error',
     'chakra-ui/require-specific-component': 'error',
     'import/no-default-export': 'error',
     'import/order': 'error',
