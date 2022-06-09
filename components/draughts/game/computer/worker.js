@@ -1,6 +1,6 @@
-import { Board } from '../../board/board';
 import { ComputerDifficulty } from '../../settings/constants/computer-difficulty';
 import { alphaBetaMove } from './alpha-beta-search';
+import { Board } from '@draughts/core';
 
 const getRandomMove = (board) => {
   return board.moves.at(Math.floor(Math.random() * board.moves.length));

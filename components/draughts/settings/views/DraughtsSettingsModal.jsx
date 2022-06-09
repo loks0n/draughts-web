@@ -16,10 +16,10 @@ import {
   Select,
   Divider,
 } from '@chakra-ui/react';
-import { Players } from '../../board/constants';
 import { useDraughtsGame } from '../../game/DraughtsGameContext';
 import { useDraughtsSettings } from '../DraughtsSettingsContext';
 import { ComputerDifficulty } from '../constants/computer-difficulty';
+import { Players } from '@draughts/core';
 
 export function DraughtsSettingsModal() {
   const { restartGame } = useDraughtsGame();

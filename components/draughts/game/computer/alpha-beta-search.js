@@ -1,5 +1,5 @@
-import { Statuses } from '../../board/constants';
 import { quiescenceSearch } from './quiescence-search';
+import { GameStates } from '@draughts/core';
 
 const getShuffledArray = (arr) => {
   const newArr = [...arr];
@@ -32,7 +32,7 @@ export function alphaBetaMove(board, depth) {
 }
 
 export function alphaBetaSearch(board, depth, alpha, beta) {
-  if (depth === 0 || board.status !== Statuses.PLAYING)
+  if (depth === 0 || board.state !== GameStates.PLAYING)
     return quiescenceSearch(board, alpha, beta);
 
   for (const move of board.moves) {

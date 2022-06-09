@@ -13,11 +13,10 @@ import {
   Divider,
 } from '@chakra-ui/react';
 import { useDraughtsBoard } from '../DraughtsBoardContext';
-import { Players, Statuses } from '../constants';
 import { useDraughtsWinner } from '../hooks/use-draughts-winner';
-import { formatPlayer } from '../utilities';
 import { useDraughtsGame } from '../../game/DraughtsGameContext';
 import { useDraughtsSettings } from '../../settings/DraughtsSettingsContext';
+import { formatPlayer, Players, GameStates } from '@draughts/core';
 
 function capitalizeFirstLetter(string) {
   return string.at(0).toUpperCase() + string.slice(1);
@@ -37,10 +36,10 @@ export function DraughtsGameOverModal() {
   const { userWon, winner } = useDraughtsWinner();
 
   useEffect(() => {
-    if (board.status === Statuses.PLAYING) return;
+    if (board.state === GameStates.PLAYING) return;
     onOpen();
     return onClose;
-  }, [board.status, onOpen, onClose]);
+  }, [board.state, onOpen, onClose]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

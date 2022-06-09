@@ -1,0 +1,10 @@
+{
+  "include": ["."],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@draughts/*": ["packages/draughts/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

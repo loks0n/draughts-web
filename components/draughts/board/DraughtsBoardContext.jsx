@@ -1,7 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Pieces, Players } from './constants';
-import { Board } from './board';
+import { Board, Pieces, Players } from '@draughts/core';
 
 export const DraughtsBoardContext = createContext();
 

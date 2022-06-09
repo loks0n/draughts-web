@@ -1,9 +1,9 @@
 import { createContext, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Players } from '../board/constants';
 import { useDraughtsBoard } from '../board/DraughtsBoardContext';
 import { useDraughtsTimer } from './timer/use-draughts-timer';
 import { useDraughtsComputer } from './computer/use-draughts-computer';
+import { Players } from '@draughts/core';
 
 export const DraughtsGameContext = createContext();
 

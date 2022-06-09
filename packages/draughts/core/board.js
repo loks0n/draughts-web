@@ -1,4 +1,3 @@
-import { Players, Pieces, Statuses } from './constants';
 import {
   cellIsEmpty,
   queenPiece,
@@ -10,6 +9,7 @@ import {
   filterToLongestCaptures,
   cellWithinBounds,
 } from './utilities';
+import { Players, Pieces, GameStates } from '@draughts/core';
 
 export class Board {
   constructor(position, playerToMove, firstMove = true) {
@@ -19,12 +19,12 @@ export class Board {
 
     this.direction = this.playerToMove === Players.WHITE ? -1 : 1;
     this.moves = this._computeMoves();
-    this.status = this._computeStatus();
+    this.state = this._computeState();
   }
 
-  _computeStatus() {
+  _computeState() {
     if (this.moves.length > 0) {
-      return Statuses.PLAYING;
+      return GameStates.PLAYING;
     }
 
     let blackPieces = 0;
@@ -41,14 +41,14 @@ export class Board {
     this.playerToMove = Players.NONE;
 
     if (blackPieces === 0) {
-      return Statuses.WHITE_WON;
+      return GameStates.WHITE_WON;
     }
 
     if (whitePieces === 0) {
-      return Statuses.BLACK_WON;
+      return GameStates.BLACK_WON;
     }
 
-    return Statuses.DRAW;
+    return GameStates.DRAW;
   }
 
   _computeMoves() {

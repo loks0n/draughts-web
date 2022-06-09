@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Statuses } from '../../board/constants';
 import { useDraughtsBoard } from '../../board/DraughtsBoardContext';
+import { GameStates } from '@draughts/core';
 
 const TIMER_TICK = 100;
 const INITIAL_TIME = 5 * 60 * 1000;
@@ -10,7 +10,7 @@ export function useDraughtsTimer(player) {
   const [timer, setTimer] = useState(INITIAL_TIME);
 
   useEffect(() => {
-    if (board.status !== Statuses.PLAYING) return;
+    if (board.state !== GameStates.PLAYING) return;
     if (board.firstMove) return;
     if (board.playerToMove !== player) return;
 

@@ -1,17 +1,23 @@
-import { eachCell, pieceIsPlayer, pieceIsQueen } from '../../board/utilities';
-import { BOARD_SIZE, Players, Statuses } from '../../board/constants';
+import {
+  eachCell,
+  pieceIsPlayer,
+  pieceIsQueen,
+  BOARD_SIZE,
+  Players,
+  GameStates,
+} from '@draughts/core';
 
 const winnerMap = {
-  [Statuses.WHITE_WON]: Players.WHITE,
-  [Statuses.BLACK_WON]: Players.BLACK,
+  [GameStates.WHITE_WON]: Players.WHITE,
+  [GameStates.BLACK_WON]: Players.BLACK,
 };
 
 export function evaluateBoard(board) {
-  if (board.status === Statuses.DRAW) {
+  if (board.state === GameStates.DRAW) {
     return 0;
   }
-  if (board.status !== Statuses.PLAYING) {
-    const winner = winnerMap[board.status];
+  if (board.state !== GameStates.PLAYING) {
+    const winner = winnerMap[board.state];
     return board.playerToMove === winner
       ? Number.POSITIVE_INFINITY
       : Number.NEGATIVE_INFINITY;

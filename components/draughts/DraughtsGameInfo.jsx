@@ -1,8 +1,8 @@
 import { HStack, VStack, Text, keyframes } from '@chakra-ui/react';
-import { Players } from './board/constants';
 import { useDraughtsPlayerToMove } from './board/hooks/use-draughts-player-to-move';
 import { useDraughtsGame } from './game/DraughtsGameContext';
 import { useDraughtsSettings } from './settings/DraughtsSettingsContext';
+import { Players } from '@draughts/core';
 
 const glowKeyframe = keyframes`
   from {

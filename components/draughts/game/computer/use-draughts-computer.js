@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useDraughtsSettings } from '../../settings/DraughtsSettingsContext';
-import { Statuses } from '../../board/constants';
 import { useDraughtsBoard } from '../../board/DraughtsBoardContext';
+import { GameStates } from '@draughts/core';
 
 export function useDraughtsComputer() {
   const { board, doMove } = useDraughtsBoard();
@@ -9,7 +9,7 @@ export function useDraughtsComputer() {
 
   const workerRef = useRef();
   useEffect(() => {
-    if (board.status !== Statuses.PLAYING) return;
+    if (board.state !== GameStates.PLAYING) return;
     if (board.playerToMove === userPlayer) return;
 
     workerRef.current = new Worker(new URL('worker.js', import.meta.url));

@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import { useDrop } from 'react-dnd';
 import { Box, Square } from '@chakra-ui/react';
 import { useDraughtsBoard } from '../DraughtsBoardContext';
-import { Pieces } from '../constants';
-import { compareCells } from '../utilities';
 import { DraughtsPiece } from './DraughtsPiece';
+import { compareCells, Pieces } from '@draughts/core';
 
 DraughtsCell.propTypes = {
   colIndex: PropTypes.number.isRequired,

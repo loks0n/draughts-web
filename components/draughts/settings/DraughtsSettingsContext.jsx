@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDisclosure } from '@chakra-ui/react';
-import { Players } from '../board/constants';
 import { ComputerDifficulty } from './constants/computer-difficulty';
+import { Players } from '@draughts/core';
 
 export const DraughtsSettingsContext = createContext();
 

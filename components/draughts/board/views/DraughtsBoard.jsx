@@ -3,11 +3,11 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import { Grid, GridItem } from '@chakra-ui/react';
 import { TouchBackend } from 'react-dnd-touch-backend';
-import { Players } from '../constants';
 import { useDraughtsBoard } from '../DraughtsBoardContext';
 import { useDraughtsSettings } from '../../settings/DraughtsSettingsContext';
 import { DraughtsCell } from './DraughtsCell';
 import { DraughtsGameOverModal } from './DraughtsGameOverModal';
+import { Players } from '@draughts/core';
 
 function isTouchDevice() {
   return (

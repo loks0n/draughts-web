@@ -4,8 +4,8 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:unicorn/recommended',
     'plugin:sonarjs/recommended',
-    'next/core-web-vitals',
     'plugin:react/jsx-runtime',
+    'next/core-web-vitals',
   ],
   overrides: [
     {
@@ -27,8 +27,10 @@ module.exports = {
       },
     },
   ],
-  parser: '@typescript-eslint/parser',
-  plugins: ['prettier', 'react', 'chakra-ui', 'sort-keys-fix'],
+  parserOptions: {
+    ecmaVersion: '2022',
+  },
+  plugins: ['react', 'chakra-ui', 'sort-keys-fix', 'prettier'],
   rules: {
     'chakra-ui/props-order': 'error',
     'chakra-ui/props-shorthand': 'error',
@@ -87,5 +89,13 @@ module.exports = {
     ],
     'unicorn/prefer-module': 'off',
     'unicorn/prevent-abbreviations': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        extensions: ['.js', '.jsx'],
+        map: [['@draughts', './packages/draughts']],
+      },
+    },
   },
 };

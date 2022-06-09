@@ -1,4 +1,4 @@
-import { BOARD_SIZE, Pieces, Players } from './constants';
+import { BOARD_SIZE, Pieces, Players } from '@draughts/core';
 
 const isQueenMap = {
   [Pieces.NONE]: false,

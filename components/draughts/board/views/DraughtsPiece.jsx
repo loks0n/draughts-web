@@ -2,10 +2,15 @@ import { useDrag } from 'react-dnd';
 import { Center } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useDraughtsBoard } from '../DraughtsBoardContext';
-import { compareCells, pieceIsPlayer, pieceIsQueen } from '../utilities';
-import { Pieces, Players } from '../constants';
 import { useDraughtsSettings } from '../../settings/DraughtsSettingsContext';
 import { DraughtsCrown } from './DraughtsCrown';
+import {
+  compareCells,
+  pieceIsPlayer,
+  pieceIsQueen,
+  Pieces,
+  Players,
+} from '@draughts/core';
 
 export function DraughtsPiece(props) {
   const { board } = useDraughtsBoard();
