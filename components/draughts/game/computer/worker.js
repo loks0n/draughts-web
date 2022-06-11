@@ -1,5 +1,5 @@
 import { ComputerDifficulty } from '../../settings/constants/computer-difficulty';
-import { alphaBetaMove } from './alpha-beta-search';
+import { alphaBetaMove } from '@draughts/computer';
 import { Board } from '@draughts/core';
 
 const getRandomMove = (board) => {
